@@ -11,7 +11,8 @@
     "promoText": "🏷️ 50 % Coupon + Prime-Rabatt laut Händlerangabe",
     "expires": "2026-10-03",
     "image": "",
-    "emoji": "🧥"
+    "emoji": "🧥",
+    "promoType": "coupon_prime"
   },
   {
     "id": "digital-mikroskop-b0gscs3p81",
@@ -25,7 +26,8 @@
     "promoText": "",
     "expires": "2026-10-04",
     "image": "",
-    "emoji": "🔬"
+    "emoji": "🔬",
+    "promoType": "code"
   },
   {
     "id": "meerjungfrau-basteln-b0hhgv5b4z",
@@ -39,7 +41,8 @@
     "promoText": "",
     "expires": "2026-10-05",
     "image": "",
-    "emoji": "🧜‍♀️"
+    "emoji": "🧜‍♀️",
+    "promoType": "code"
   },
   {
     "id": "akku-rasentrimmer-b0h82qs44h",
@@ -53,7 +56,8 @@
     "promoText": "",
     "expires": "2026-10-03",
     "image": "",
-    "emoji": "🌿"
+    "emoji": "🌿",
+    "promoType": "code"
   },
   {
     "id": "esonstyle-schwimm-kopfhoerer-b0h6jpjqfj",
@@ -67,7 +71,8 @@
     "promoText": "",
     "expires": "2026-10-31",
     "image": "",
-    "emoji": "🎧"
+    "emoji": "🎧",
+    "promoType": "code"
   },
   {
     "id": "dampfreiniger-b0gzqjct8s",
@@ -81,7 +86,8 @@
     "promoText": "✨ Zusätzlich Prime-Rabatt laut Händlerangabe",
     "expires": "2026-10-05",
     "image": "",
-    "emoji": "✨"
+    "emoji": "✨",
+    "promoType": "code_prime"
   },
   {
     "id": "kohlenmonoxidmelder-b0gqsl7dhn",
@@ -95,7 +101,8 @@
     "promoText": "",
     "expires": "2026-10-31",
     "image": "",
-    "emoji": "🚨"
+    "emoji": "🚨",
+    "promoType": "code"
   },
   {
     "id": "czeview-kamera-b0fklx43qd",
@@ -109,7 +116,8 @@
     "promoText": "",
     "expires": "2026-10-05",
     "image": "",
-    "emoji": "📹"
+    "emoji": "📹",
+    "promoType": "code"
   },
   {
     "id": "msmk-bratpfanne-b0gyx1jvwd",
@@ -123,6 +131,7 @@
     "promoText": "",
     "expires": "2026-10-31",
     "image": "",
-    "emoji": "🍳"
+    "emoji": "🍳",
+    "promoType": "code"
   }
 ]
