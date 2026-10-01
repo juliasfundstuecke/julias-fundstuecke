@@ -24,6 +24,20 @@ const isExpired = (dateString) => {
   return expiry < today;
 };
 
+function purchaseHint(deal){
+  switch(deal.promoType){
+    case 'code':
+      return 'Den Gutscheincode kannst du vor dem Kauf auf der Amazon-Produktseite eingeben und anschließend den finalen Preis prüfen.';
+    case 'code_prime':
+      return 'Den Gutscheincode kannst du vor dem Kauf auf der Amazon-Produktseite eingeben. Prüfe dort auch den zusätzlichen Prime-Rabatt und anschließend den finalen Preis.';
+    case 'coupon':
+    case 'coupon_prime':
+      return 'Den Coupon kannst du direkt auf der Amazon-Produktseite aktivieren. Prüfe anschließend den finalen Preis vor dem Kauf.';
+    default:
+      return 'Der Rabatt wird direkt auf der Amazon-Produktseite angezeigt. Prüfe dort vor dem Kauf den aktuellen finalen Preis.';
+  }
+}
+
 function renderDeal(deal){
   const badge = deal.discountLabel
     ? `<div class="deal-badge">${escapeHtml(deal.discountLabel)}</div>`
@@ -50,6 +64,7 @@ function renderDeal(deal){
         <p class="deal-desc">${escapeHtml(deal.description || '')}</p>
         <div class="price-check">Aktuellen Preis direkt bei Amazon prüfen</div>
         ${promo}
+        <p class="deal-hint">${escapeHtml(purchaseHint(deal))}</p>
         <div class="deal-actions">
           <a class="btn btn-primary" href="${amazonAffiliateUrl(deal.asin)}" target="_blank" rel="nofollow sponsored noopener">Zum Angebot →</a>
         </div>
