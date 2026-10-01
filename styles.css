@@ -5,10 +5,10 @@
   --text:#22211f;
   --muted:#6f6a63;
   --line:#e8e2d9;
-  --accent:#d96c3b;
-  --accent-dark:#b95228;
-  --badge:#eef1df;
-  --badge-text:#44502d;
+  --accent:#e56a32;
+  --accent-dark:#bd4d23;
+  --badge:#fff0e6;
+  --badge-text:#9b3f1b;
   --shadow:0 14px 40px rgba(41,35,28,.08);
   --radius:22px;
   --max:1180px;
@@ -90,8 +90,12 @@ img{max-width:100%;display:block}
   text-decoration:none;font-weight:800;font-size:15px;
   border:1px solid transparent;transition:.2s ease;
 }
-.btn-primary{background:var(--text);color:#fff}
-.btn-primary:hover{transform:translateY(-1px);background:#000}
+.btn-primary{
+  background:linear-gradient(135deg,#e56a32,#bd4d23);
+  color:#fff;
+  box-shadow:0 8px 18px rgba(189,77,35,.18)
+}
+.btn-primary:hover{transform:translateY(-1px);filter:brightness(.96)}
 .btn-secondary{background:transparent;border-color:var(--line)}
 .btn-secondary:hover{background:var(--surface)}
 .hero-card{
@@ -121,10 +125,15 @@ img{max-width:100%;display:block}
 .deal-card{
   position:relative;
   display:grid;grid-template-columns:300px 1fr;gap:34px;align-items:stretch;
-  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
-  padding:24px;box-shadow:0 10px 32px rgba(41,35,28,.05);
-  overflow:hidden;
+  background:var(--surface);border:1px solid #eadfd4;border-radius:var(--radius);
+  padding:24px;box-shadow:0 14px 34px rgba(77,54,37,.07);
+  overflow:hidden;transition:.2s ease;
 }
+.deal-card::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(180deg,#ff9a62,var(--accent),#b94a21);
+}
+.deal-card:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(77,54,37,.11)}
 .deal-media{
   min-height:255px;border-radius:16px;
   background:linear-gradient(145deg,#f7f3ed,#ece5dc);
@@ -136,22 +145,25 @@ img{max-width:100%;display:block}
   display:grid;place-items:center;font-size:54px;
 }
 .deal-badge{
-  position:absolute;top:18px;right:18px;
+  position:absolute;top:18px;right:18px;z-index:3;
   background:var(--badge);color:var(--badge-text);
+  border:1px solid #ffd7c1;
   border-radius:999px;padding:8px 12px;
   font-size:12px;font-weight:900;letter-spacing:.04em;
+  box-shadow:0 6px 18px rgba(189,77,35,.10);
 }
 .deal-content{display:flex;flex-direction:column;justify-content:center;min-width:0}
 .deal-kicker{color:var(--accent-dark);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
 .deal-card h3{margin:7px 0 8px;font-size:28px;line-height:1.15;letter-spacing:-.02em}
 .deal-desc{color:var(--muted);margin:0 0 18px;max-width:690px}
 .price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.price-now{font-size:30px;font-weight:900}
+.price-now{font-size:34px;font-weight:950;letter-spacing:-.02em;color:#1f1f1f}
+.price-now::before{content:"🔥";font-size:.78em;margin-right:8px}
 .price-old{color:var(--muted);text-decoration:line-through;font-size:14px}
 .coupon{
   display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-  background:#f6f4f1;border:1px dashed #d8d0c4;border-radius:12px;
-  padding:11px 13px;margin:14px 0 16px;max-width:520px;font-size:14px;
+  background:#fff7f1;border:1px dashed #efb28d;border-radius:12px;
+  padding:12px 14px;margin:14px 0 16px;max-width:520px;font-size:14px;
 }
 .code{
   font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
@@ -205,7 +217,7 @@ img{max-width:100%;display:block}
   .section{padding:34px 0}
   .section-head h2{font-size:32px}
   .deal-card{border-radius:17px}
-  .deal-card h3{padding-right:86px;font-size:22px}
-  .price-now{font-size:27px}
+  .deal-card h3{padding-right:96px;font-size:22px}
+  .price-now{font-size:29px}
   .deal-actions .btn{width:100%}
 }
