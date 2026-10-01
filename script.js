@@ -8,7 +8,7 @@ const escapeHtml = (value='') => String(value)
   .replace(/'/g,'&#039;');
 
 const amazonAffiliateUrl = (asin) =>
-  `https://www.amazon.de/dp/${encodeURIComponent(asin)}?tag=${encodeURIComponent(AMAZON_TRACKING_TAG)}`;
+  `https://www.amazon.de/dp/${encodeURIComponent(asin)}/ref=nosim?tag=${encodeURIComponent(AMAZON_TRACKING_TAG)}`;
 
 const formatExpiry = (dateString) => {
   if (!dateString) return '';
@@ -48,10 +48,7 @@ function renderDeal(deal){
         <div class="deal-kicker">${deal.code ? '🎟️ Gutscheincode' : '🔥 Aktuelles Angebot'}</div>
         <h3>${escapeHtml(deal.product)}</h3>
         <p class="deal-desc">${escapeHtml(deal.description || '')}</p>
-        <div class="price-row">
-          <span class="price-now">${escapeHtml(deal.price)}</span>
-          ${deal.oldPrice ? `<span class="price-old">${escapeHtml(deal.oldPrice)}</span>` : ''}
-        </div>
+        <div class="price-check">Aktuellen Preis direkt bei Amazon prüfen</div>
         ${promo}
         <div class="deal-actions">
           <a class="btn btn-primary" href="${amazonAffiliateUrl(deal.asin)}" target="_blank" rel="nofollow sponsored noopener">Zum Angebot →</a>
