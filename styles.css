@@ -426,3 +426,38 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
 /* Simpler primary navigation */
 .nav{gap:30px}
 .nav a{font-size:14px;font-weight:750}
+
+
+/* Recommendations page refresh */
+.recommend-hero{padding:64px 0 30px}
+.recommend-hero-inner{max-width:760px}
+.recommend-hero h1{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(44px,6.5vw,70px);
+  line-height:1;
+  letter-spacing:-.045em;
+  margin:12px 0 16px;
+}
+.recommend-hero p{margin:0;color:var(--muted);font-size:17px;line-height:1.65;max-width:670px}
+.recommend-topics{padding-top:28px}
+.recommend-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.recommend-card{
+  display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:center;
+  padding:22px;background:#fff;border:1px solid var(--line);border-radius:20px;
+  text-decoration:none;box-shadow:0 10px 28px rgba(48,38,29,.045);transition:.2s ease;
+}
+.recommend-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.recommend-icon{width:52px;height:52px;border-radius:16px;background:#f7eee6;display:grid;place-items:center;font-size:25px}
+.recommend-card h3{margin:0 0 4px;font-size:19px}
+.recommend-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.5}
+.recommend-arrow{font-size:24px;color:var(--accent-dark);font-weight:800}
+.recommend-feature{box-shadow:none}
+.recommend-deals{padding-top:34px}
+.recommend-note-section{padding-top:18px;padding-bottom:0}
+@media(max-width:700px){
+  .recommend-hero{padding:44px 0 22px}
+  .recommend-hero h1{font-size:46px}
+  .recommend-grid{grid-template-columns:1fr}
+  .recommend-card{grid-template-columns:50px 1fr auto;padding:18px}
+  .recommend-icon{width:46px;height:46px;font-size:22px}
+}
