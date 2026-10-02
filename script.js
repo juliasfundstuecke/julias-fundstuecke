@@ -69,6 +69,11 @@ function renderDeal(deal){
           <a class="btn btn-primary" href="${amazonAffiliateUrl(deal.asin)}" target="_blank" rel="nofollow sponsored noopener">Zum Angebot →</a>
         </div>
         <div class="affiliate-note">Werbung | Affiliate-Link${deal.expires ? ' · Gültig bis ' + formatExpiry(deal.expires) : ''}</div>
+        <div class="feedback-box">
+          <strong>💬 Hat der Deal bei dir geklappt?</strong>
+          <span>Teile deine Erfahrung mit anderen Schnäppchenjägern und komm gerne in unsere Facebook-Gruppe.</span>
+          <a href="https://www.facebook.com/share/g/1CDpJMHCjn/?mibextid=wwXIfr" target="_blank" rel="noopener">👉 Feedback &amp; Austausch auf Facebook</a>
+        </div>
       </div>
     </article>`;
 }
