@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="de">
 <head>
+  <!-- Google Analytics: Consent Mode v2 defaults to denied until the visitor opts in. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBWRE15XZL"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-PBWRE15XZL');
+  </script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Julia's Fundstücke">
   <meta property="og:title" content="Datenschutz | Julia's Fundstücke">
@@ -28,9 +45,11 @@
 <p>Diese Website nimmt am Amazon-Partnerprogramm teil. Auf den Deal- und Empfehlungsseiten befinden sich als Werbung gekennzeichnete Partnerlinks zu Amazon. Erst wenn du einen solchen externen Link anklickst, verlässt du Julia's Fundstücke und rufst die jeweilige Amazon-Website auf. Amazon kann den Aufruf des Partnerlinks dem verwendeten Partnerkennzeichen zuordnen und auf der Amazon-Website eigene Technologien, einschließlich Cookies, einsetzen.</p>
 <p>Für die weitere Verarbeitung auf der Amazon-Website ist der jeweilige Amazon-Dienst verantwortlich. Informationen dazu findest du in der Datenschutzerklärung von Amazon.de. Julia's Fundstücke erhält im Rahmen des Partnerprogramms grundsätzlich Provisions- und Auswertungsinformationen, jedoch über diese statische Website keine von dir eingegebenen Bestell- oder Zahlungsdaten.</p>
 
-<h2>4. Cookies und Tracking auf Julia's Fundstücke</h2>
-<p>Julia's Fundstücke setzt derzeit selbst keine Analyse-, Marketing- oder Profiling-Cookies und keine eigenen Tracking-Pixel ein. Es sind derzeit auch keine externen Analyse-, Newsletter- oder Social-Media-Plugins eingebunden. Technisch erforderliche Verarbeitungen des Hosting-Anbieters bleiben hiervon unberührt.</p>
-<p>Sollten künftig zusätzliche Dienste, eingebettete Inhalte, Analysewerkzeuge oder andere Tracking-Technologien eingesetzt werden, werden diese Datenschutzhinweise vor deren Einsatz entsprechend angepasst und – soweit gesetzlich erforderlich – eine Einwilligung eingeholt.</p>
+<h2>4. Cookies, Einwilligung und Google Analytics</h2>
+<p>Auf Julia's Fundstücke wird Google Analytics eingesetzt, um – nach deiner Einwilligung – die Nutzung der Website statistisch auszuwerten. Anbieter ist Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.</p>
+<p>Beim ersten Besuch sind die Einwilligungssignale für Analyse und Werbung standardmäßig auf „abgelehnt“ gesetzt. Erst wenn du über das Einwilligungsbanner „Analyse erlauben“ auswählst, wird die Analysefreigabe erteilt. Die Auswahl wird lokal in deinem Browser gespeichert. Rechtsgrundlage für die einwilligungsabhängige Verarbeitung ist Art. 6 Abs. 1 lit. a DSGVO i. V. m. § 25 TDDDG. Eine erteilte Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen.</p>
+<p>Google Analytics kann insbesondere Informationen über Seitenaufrufe und die Nutzung der Website verarbeiten. Google kann Daten auch an verbundene Unternehmen oder Dienstleister übermitteln; dabei können Verarbeitungen außerhalb des Europäischen Wirtschaftsraums stattfinden. Weitere Informationen zur Datenverarbeitung durch Google findest du in den Datenschutzinformationen von Google.</p>
+<p><button type="button" class="consent-settings-button" data-consent-settings>Datenschutz-Einstellungen ändern</button></p>
 
 <h2>5. Kontakt per E-Mail</h2>
 <p>Wenn du uns per E-Mail kontaktierst, verarbeiten wir die von dir übermittelten Angaben, um deine Anfrage zu bearbeiten. Rechtsgrundlage ist je nach Inhalt der Anfrage Art. 6 Abs. 1 lit. b DSGVO oder Art. 6 Abs. 1 lit. f DSGVO. Die Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
@@ -49,4 +68,12 @@
 </div></div></section>
 </main>
 <footer class="footer"><div class="container footer-inner"><div>© <span data-year></span> Julia's Fundstücke · Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</div><div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></footer>
+
+<div class="consent-banner" data-consent-banner hidden role="dialog" aria-label="Datenschutzeinstellungen" aria-live="polite">
+  <div class="consent-inner">
+    <div class="consent-copy"><strong>Datenschutz-Einstellungen</strong><p>Wir möchten Google Analytics nutzen, um zu verstehen, wie unsere Website verwendet wird. Analyse wird nur mit deiner Einwilligung aktiviert. Du kannst deine Auswahl jederzeit ändern.</p></div>
+    <div class="consent-actions"><button type="button" class="btn btn-secondary" data-consent-reject>Nur notwendige</button><button type="button" class="btn btn-primary" data-consent-accept>Analyse erlauben</button></div>
+    <div class="consent-links"><a href="datenschutz.html">Datenschutz</a><button type="button" class="consent-link-button" data-consent-close>Später entscheiden</button></div>
+  </div>
+</div>
 <script src="script.js"></script></body></html>
