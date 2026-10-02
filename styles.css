@@ -461,3 +461,85 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
   .recommend-card{grid-template-columns:50px 1fr auto;padding:18px}
   .recommend-icon{width:46px;height:46px;font-size:22px}
 }
+
+
+/* Compact mobile-first deals feed */
+.deals-page .page-hero{padding:54px 0 22px}
+.deals-page .page-hero h1{font-size:clamp(42px,6vw,60px)}
+.deals-page .page-hero p{max-width:650px}
+.deals-page .trust-strip{margin:18px 0 0}
+.deals-section{padding-top:20px}
+.deals-feed{gap:16px}
+.deals-page .deal-card{
+  grid-template-columns:210px 1fr;
+  gap:24px;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(48,38,29,.055);
+}
+.deals-page .deal-media{min-height:190px;padding:18px;border-radius:16px}
+.deals-page .placeholder-premium{min-height:170px!important}
+.deals-page .placeholder-mark{width:58px;height:58px;font-size:28px;margin-bottom:10px}
+.deals-page .deal-card h3{font-size:24px;margin:5px 0 8px;padding-right:120px}
+.deals-page .deal-badge{top:16px;right:16px;font-size:10px;padding:7px 10px;max-width:180px;text-align:center}
+.deals-page .price-now{font-size:34px}
+.deals-page .price-old{font-size:13px}
+.deals-page .coupon{margin:10px 0 12px;padding:10px 12px;font-size:13px}
+.deals-page .price-check{margin-bottom:8px}
+.deals-page .deal-actions{margin-top:12px}
+.deals-page .deal-actions .btn{min-height:46px;padding-inline:18px}
+.deal-details{margin:4px 0 2px;border-top:1px solid var(--line);padding-top:10px}
+.deal-details summary{cursor:pointer;color:var(--accent-dark);font-weight:850;font-size:13px;list-style:none}
+.deal-details summary::-webkit-details-marker{display:none}
+.deal-details summary:after{content:" +";font-weight:900}
+.deal-details[open] summary:after{content:" −"}
+.deal-details .deal-desc{font-size:13px;line-height:1.55;margin:10px 0 8px}
+.deal-details .deal-hint{margin:0 0 4px}
+.deal-community{
+  margin-top:28px;
+  background:linear-gradient(135deg,#fff,#f3ede6);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+.deal-community h2{font-family:Georgia,"Times New Roman",serif;font-size:28px;line-height:1.1;margin:6px 0 8px}
+.deal-community p{margin:0;color:var(--muted);font-size:14px;max-width:650px}
+.deal-community-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}
+@media(max-width:860px){
+  .deals-page .page-hero{padding:42px 0 18px}
+  .deals-page .deal-card{grid-template-columns:150px 1fr;gap:18px;padding:16px}
+  .deals-page .deal-media{min-height:150px;padding:12px}
+  .deals-page .placeholder-premium{min-height:140px!important}
+  .deal-community{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:620px){
+  .deals-page .page-hero h1{font-size:44px}
+  .deals-page .trust-strip span{width:auto;flex:1 1 100%}
+  .deals-page .deal-card{grid-template-columns:108px 1fr;gap:13px;padding:13px}
+  .deals-page .deal-card:before{width:3px}
+  .deals-page .deal-media{min-height:108px;height:108px;padding:8px;align-self:start}
+  .deals-page .placeholder-premium{min-height:92px!important;height:92px!important;border-radius:13px!important}
+  .deals-page .placeholder-mark{width:42px;height:42px;border-radius:13px;font-size:21px;margin-bottom:5px}
+  .deals-page .placeholder-brand{font-size:14px}
+  .deals-page .placeholder-label{font-size:7px}
+  .deals-page .deal-kicker{font-size:9px}
+  .deals-page .deal-card h3{font-size:18px;line-height:1.18;padding-right:0;margin:3px 0 7px}
+  .deals-page .deal-badge{position:static;grid-column:1/-1;justify-self:start;margin:-2px 0 0 2px;max-width:100%;font-size:9px}
+  .deals-page .price-now{font-size:26px}
+  .deals-page .price-now::before{font-size:.7em;margin-right:5px}
+  .deals-page .price-old{font-size:11px}
+  .deals-page .price-check{font-size:10px;margin-bottom:7px}
+  .deals-page .coupon{grid-column:1/-1;font-size:11px;margin:8px 0;padding:8px 9px}
+  .deals-page .deal-actions .btn{width:100%;min-height:43px;font-size:14px}
+  .deals-page .affiliate-note{font-size:9px}
+  .deal-details{grid-column:1/-1}
+  .deal-details summary{font-size:12px}
+  .deal-community{padding:19px;border-radius:17px}
+  .deal-community h2{font-size:25px}
+  .deal-community-actions{width:100%}
+  .deal-community-actions .btn{width:100%}
+}
