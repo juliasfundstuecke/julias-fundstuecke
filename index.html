@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="de">
 <head>
+  <!-- Google Analytics: Consent Mode v2 defaults to denied until the visitor opts in. -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBWRE15XZL"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-PBWRE15XZL');
+  </script>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Julia's Fundstücke">
   <meta property="og:title" content="Julia's Fundstücke – Deals, Empfehlungen & Gutscheincodes">
@@ -102,6 +119,14 @@
 </main>
 
 <footer class="footer"><div class="container footer-inner"><div>© <span data-year></span> Julia's Fundstücke · Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</div><div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></footer>
+
+<div class="consent-banner" data-consent-banner hidden role="dialog" aria-label="Datenschutzeinstellungen" aria-live="polite">
+  <div class="consent-inner">
+    <div class="consent-copy"><strong>Datenschutz-Einstellungen</strong><p>Wir möchten Google Analytics nutzen, um zu verstehen, wie unsere Website verwendet wird. Analyse wird nur mit deiner Einwilligung aktiviert. Du kannst deine Auswahl jederzeit ändern.</p></div>
+    <div class="consent-actions"><button type="button" class="btn btn-secondary" data-consent-reject>Nur notwendige</button><button type="button" class="btn btn-primary" data-consent-accept>Analyse erlauben</button></div>
+    <div class="consent-links"><a href="datenschutz.html">Datenschutz</a><button type="button" class="consent-link-button" data-consent-close>Später entscheiden</button></div>
+  </div>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
