@@ -92,6 +92,16 @@ async function loadDeals(){
       target.innerHTML = deals.length
         ? deals.map(renderDeal).join('')
         : '<div class="info-box">Zurzeit sind keine aktiven Deals verfügbar.</div>';
+
+      // Wenn die Seite mit einem Deal-Anker geöffnet wurde (z. B. von Pinterest),
+      // erst nach dem dynamischen Laden der Deals zum gewünschten Angebot springen.
+      if (window.location.hash) {
+        const dealId = decodeURIComponent(window.location.hash.slice(1));
+        const anchoredDeal = document.getElementById(dealId);
+        if (anchoredDeal) {
+          requestAnimationFrame(() => anchoredDeal.scrollIntoView({behavior:'auto', block:'start'}));
+        }
+      }
     });
   }catch(error){
     targets.forEach(target => {
