@@ -137,8 +137,24 @@ document.addEventListener('click', async (event)=>{
 const toggle=document.querySelector('.nav-toggle');
 const nav=document.querySelector('.nav');
 if(toggle&&nav){
-  toggle.addEventListener('click',()=>nav.classList.toggle('open'));
+  toggle.addEventListener('click',()=>{
+    const open=nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+  });
+  nav.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click',()=>{
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Menü öffnen');
+    });
+  });
 }
+const currentPage=(window.location.pathname.split('/').pop()||'index.html').toLowerCase();
+document.querySelectorAll('.nav a').forEach(link=>{
+  const href=(link.getAttribute('href')||'').toLowerCase();
+  if(href===currentPage) link.classList.add('active');
+});
 
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 loadDeals();
