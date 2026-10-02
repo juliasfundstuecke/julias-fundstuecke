@@ -280,3 +280,12 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
 .footer{background:#211f1c;color:#bcb5ad;border-top:0;margin-top:82px;padding:34px 0 46px}.footer a{color:#f2ede7}.footer a:hover{color:#f0a27f}
 @media(max-width:860px){.hero{padding-top:58px}.hero-grid{gap:34px}.deal-card{grid-template-columns:1fr;gap:22px;padding:20px}.deal-media{min-height:250px}}
 @media(max-width:520px){.header-inner{min-height:70px}.brand strong{font-size:23px}.hero{padding:46px 0 38px}.hero h1{font-size:45px}.hero-card{min-height:330px;padding:26px}.hero-card h2{font-size:27px}.section{padding:42px 0}.section-head h2{font-size:34px}.deal-card h3{font-size:23px}.price-now{font-size:32px}}
+
+/* Refined navigation */
+.nav-divider{width:1px;height:22px;background:var(--line);margin:0 2px}
+@media(max-width:860px){
+  .nav{gap:4px;padding:10px}
+  .nav a{padding:12px 13px;border-radius:10px;font-size:14px}
+  .nav a:hover,.nav a.active{background:#f7eee6;color:var(--accent-dark)}
+  .nav-divider{width:100%;height:1px;margin:5px 0;background:var(--line)}
+}
