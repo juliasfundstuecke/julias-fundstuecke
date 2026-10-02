@@ -317,3 +317,31 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
 .consent-actions{display:flex;gap:10px;flex-wrap:wrap}.consent-links{display:flex;gap:16px;align-items:center;font-size:12px;color:var(--muted)}
 .consent-link-button,.consent-settings-button{border:0;background:transparent;padding:0;color:var(--accent-dark);font:inherit;font-weight:800;text-decoration:underline;cursor:pointer}
 @media(max-width:520px){.consent-banner{inset:auto 10px 10px;padding:17px;border-radius:16px}.consent-actions .btn{width:100%}}
+
+
+/* Pinterest outfit landing page */
+.outfit-hero{padding:76px 0 36px}
+.outfit-hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+.outfit-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,6.4vw,72px);line-height:1.04;letter-spacing:-.04em;margin:14px 0 20px;max-width:760px}
+.outfit-intro{max-width:690px;color:var(--muted);font-size:17px;line-height:1.7;margin:0}
+.outfit-note{background:linear-gradient(145deg,#fff,#f3ede5);border:1px solid var(--line);border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.outfit-note strong{font-family:Georgia,"Times New Roman",serif;font-size:23px}
+.outfit-note p{color:var(--muted);font-size:14px;margin:10px 0 0}
+.outfit-palette{display:flex;gap:9px;flex-wrap:wrap;margin-top:24px}
+.swatch{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:800}
+.swatch:before{content:"";width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
+.swatch-camel:before{background:#c79a69}.swatch-bordeaux:before{background:#7f2435}.swatch-denim:before{background:#253c58}.swatch-cognac:before{background:#9c5c31}
+.outfit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.outfit-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;display:grid;grid-template-columns:64px 1fr;gap:18px;box-shadow:0 10px 30px rgba(48,38,29,.045)}
+.outfit-icon{width:58px;height:58px;border-radius:18px;background:#f7eee6;display:grid;place-items:center;font-size:28px}
+.outfit-label{display:inline-block;color:var(--accent-dark);font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px}
+.outfit-card h3{font-size:22px;line-height:1.2;margin:0 0 8px}
+.outfit-card p{color:var(--muted);font-size:14px;margin:0 0 12px}
+.outfit-card .outfit-check{font-size:12px;color:#514c46;background:#faf7f2;border-radius:10px;padding:9px 11px;margin-bottom:15px}
+.outfit-card .btn{min-height:44px;padding-inline:16px}
+.outfit-disclosure{margin-top:22px;background:var(--surface-soft);border:1px solid var(--line);border-radius:16px;padding:17px 19px;color:#514c46;font-size:12px}
+.home-inspiration{background:linear-gradient(135deg,#fff,#f4eee6);border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 10px 32px rgba(41,35,28,.045)}
+.home-inspiration h2{font-family:Georgia,"Times New Roman",serif;font-size:32px;line-height:1.1;margin:7px 0 8px}
+.home-inspiration p{color:var(--muted);margin:0;max-width:650px}
+@media(max-width:860px){.outfit-hero-grid{grid-template-columns:1fr;gap:26px}.outfit-grid{grid-template-columns:1fr}.home-inspiration{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.outfit-hero{padding:48px 0 24px}.outfit-hero h1{font-size:42px}.outfit-card{grid-template-columns:1fr;padding:20px}.outfit-icon{width:52px;height:52px}.home-inspiration{padding:22px;border-radius:18px}.home-inspiration h2{font-size:28px}}
