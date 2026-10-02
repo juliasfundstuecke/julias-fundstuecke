@@ -2,65 +2,68 @@
 <html lang="de">
 <head>
   <script src="analytics.js"></script>
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="Julia's Fundstücke">
-  <meta property="og:title" content="Julia's Fundstücke – Deals, Empfehlungen & Gutscheincodes">
-  <meta property="og:description" content="Julia">
+  <meta property="og:title" content="Julia's Fundstücke – aktuelle Deals & Gutscheincodes">
+  <meta property="og:description" content="Ausgewählte Deals, Gutscheincodes und Fundstücke – klar, aktuell und schnell gefunden.">
   <meta property="og:image" content="https://julias-fundstuecke.de/julias-fundstuecke-vorschau.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://julias-fundstuecke.de/julias-fundstuecke-vorschau.jpg">
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Julia's Fundstücke – aktuelle Deals, Gutscheincodes und ausgewählte Empfehlungen.">
-  <title>Julia's Fundstücke – Deals, Empfehlungen & Gutscheincodes</title>
+  <title>Julia's Fundstücke – aktuelle Deals & Gutscheincodes</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="index.html"><strong>Julia's Fundstücke</strong><span>Deals · Favoriten · Inspiration</span></a>
+    <a class="brand" href="index.html"><strong>Julia's Fundstücke</strong><span>Deals · Gutscheine · Fundstücke</span></a>
     <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav">☰</button>
     <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
-      <a href="index.html">Startseite</a>
-      <a href="deals.html">Aktuelle Deals</a>
-      <a href="gutscheincodes.html">Gutscheincodes</a>
-      <a href="bestseller.html">Bestseller & Empfehlungen</a>
-      <span class="nav-divider" aria-hidden="true"></span>
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
+      <a href="index.html">Start</a>
+      <a href="deals.html">Deals</a>
+      <a href="gutscheincodes.html">Gutscheine</a>
+      <a href="bestseller.html">Empfehlungen</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">✦ Jeden Tag neue Fundstücke</div>
-        <h1>Schöne Dinge. Gute Preise. Schnell gefunden.</h1>
-        <p>Aktuelle Deals, Gutscheincodes und ausgewählte Fundstücke – übersichtlich aufbereitet und mit klaren Hinweisen zu Preis und Verfügbarkeit.</p>
-        <div class="trust-strip" aria-label="So arbeiten wir">
-          <span>✓ Deals mit Prüfhinweis</span><span>✓ Klare Rabattangaben</span><span>✓ Affiliate-Links gekennzeichnet</span>
-        </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="deals.html">Aktuelle Deals ansehen →</a>
-          <a class="btn btn-secondary" href="bestseller.html">Empfehlungen entdecken</a>
-          <a class="btn btn-channel" href="https://whatsapp.com/channel/0029VbDqaVECXC3Hq6vQYK27" target="_blank" rel="noopener">📲 WhatsApp-Kanal folgen</a>
-        </div>
+  <section class="home-hero">
+    <div class="container home-hero-inner">
+      <div class="eyebrow">✦ Jeden Tag neue Fundstücke</div>
+      <h1>Deals, die sich wirklich lohnen.</h1>
+      <p class="home-lede">Aktuelle Angebote, Gutscheincodes und ausgewählte Fundstücke – ohne Umwege. Preise und Verfügbarkeit können sich kurzfristig ändern.</p>
+      <div class="home-actions">
+        <a class="btn btn-primary" href="deals.html">🔥 Aktuelle Deals ansehen</a>
+        <a class="home-text-link" href="https://whatsapp.com/channel/0029VbDqaVECXC3Hq6vQYK27" target="_blank" rel="noopener">📲 WhatsApp-Kanal folgen →</a>
       </div>
-      <aside class="hero-card">
-        <div>
-          <div class="mini-label">Julia prüft für dich</div>
-          <div class="big-number">✓</div>
-        </div>
-        <div>
-          <h2>Fundstücke mit transparenten Angaben.</h2>
-          <p>Bei kurzfristigen Angeboten siehst du direkt, wann ein Preis zuletzt geprüft wurde. Vor dem Kauf gilt immer der aktuelle Preis beim Händler.</p>
-        </div>
-      </aside>
+    </div>
+  </section>
+
+  <section class="section home-hot">
+    <div class="container">
+      <div class="section-head">
+        <div><div class="eyebrow">🔥 Heute besonders interessant</div><h2>Frisch gefunden</h2></div>
+        <a href="deals.html">Alle Deals →</a>
+      </div>
+      <div class="deal-list" data-deals data-limit="3"></div>
+    </div>
+  </section>
+
+  <section class="section home-categories">
+    <div class="container">
+      <div class="section-head simple-head">
+        <div><div class="eyebrow">Schnell zum Ziel</div><h2>Was möchtest du entdecken?</h2></div>
+      </div>
+      <div class="category-grid">
+        <a class="category-card" href="deals.html"><div class="icon">🔥</div><h3>Deals</h3><p>Aktuelle Preisaktionen und zeitlich begrenzte Angebote.</p></a>
+        <a class="category-card" href="gutscheincodes.html"><div class="icon">🎟️</div><h3>Gutscheincodes</h3><p>Codes direkt kopieren und beim Händler prüfen.</p></a>
+        <a class="category-card" href="bestseller.html"><div class="icon">✨</div><h3>Empfehlungen</h3><p>Fundstücke und Ideen, die länger interessant bleiben.</p></a>
+      </div>
     </div>
   </section>
 
@@ -68,25 +71,11 @@
     <div class="container">
       <div class="channel-cta">
         <div>
-          <div class="eyebrow">📲 Deals direkt aufs Handy</div>
-          <h2>Julia’s Fundstücke jetzt auf WhatsApp</h2>
-          <p>Ausgewählte Deals, Gutscheincodes, Cashback-Aktionen und besonders starke Fundstücke direkt im Kanal – ohne langes Suchen.</p>
+          <div class="eyebrow">📲 Keinen starken Deal verpassen</div>
+          <h2>Julia’s Fundstücke auf WhatsApp</h2>
+          <p>Ausgewählte Deals, Gutscheincodes, Cashback-Aktionen und besondere Fundstücke direkt im Kanal.</p>
         </div>
-        <a class="btn btn-channel" href="https://whatsapp.com/channel/0029VbDqaVECXC3Hq6vQYK27" target="_blank" rel="noopener">Kanal kostenlos folgen →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div><div class="eyebrow">Entdecken</div><h2>Was suchst du heute?</h2></div>
-        <p>Kurze Wege statt endloses Scrollen: aktuelle Angebote, kopierbare Codes und längerfristige Empfehlungen.</p>
-      </div>
-      <div class="category-grid">
-        <a class="category-card" href="deals.html"><div class="icon">🔥</div><h3>Aktuelle Deals</h3><p>Frische Preisaktionen und zeitlich begrenzte Angebote.</p></a>
-        <a class="category-card" href="gutscheincodes.html"><div class="icon">🎟️</div><h3>Gutscheincodes</h3><p>Codes direkt kopieren und beim Anbieter verwenden.</p></a>
-        <a class="category-card" href="bestseller.html"><div class="icon">✨</div><h3>Bestseller & Favoriten</h3><p>Produkte, die sich auch ohne kurzfristigen Deal lohnen können.</p></a>
+        <a class="btn btn-channel" href="https://whatsapp.com/channel/0029VbDqaVECXC3Hq6vQYK27" target="_blank" rel="noopener">Kostenlos folgen →</a>
       </div>
     </div>
   </section>
@@ -95,36 +84,22 @@
     <div class="container">
       <div class="home-inspiration">
         <div>
-          <div class="eyebrow">🍂 Neu · Outfit-Inspiration</div>
+          <div class="eyebrow">🍂 Looks & Ideen</div>
           <h2>Herbst-Look zum Nachstylen</h2>
-          <p>Camel, Bordeaux, dunkler Denim und Cognac: sechs klar beschriftete Fundstücke, damit du sofort weißt, welcher Link zu welchem Teil gehört.</p>
+          <p>Camel, Bordeaux, dunkler Denim und Cognac: sechs klar beschriftete Fundstücke für den Look.</p>
         </div>
-        <a class="btn btn-primary" href="herbst-outfit.html">Herbst-Look entdecken →</a>
+        <a class="btn btn-secondary" href="herbst-outfit.html">Look entdecken →</a>
       </div>
     </div>
   </section>
 
-  <section class="section trust-section">
+  <section class="section home-transparency">
     <div class="container">
-      <div class="trust-panel">
-        <div><div class="eyebrow">Transparent auswählen</div><h2>So entstehen die Fundstücke</h2></div>
-        <div class="trust-steps">
-          <div><strong>01</strong><span><b>Entdecken</b> – auffällige Angebote und Gutscheincodes finden.</span></div>
-          <div><strong>02</strong><span><b>Prüfen</b> – Preis, Variante und Angebotsbedingungen so weit wie möglich kontrollieren.</span></div>
-          <div><strong>03</strong><span><b>Klar kennzeichnen</b> – Unsicherheiten nennen und keine unbestätigten Preisfehler versprechen.</span></div>
-        </div>
-        <p class="trust-note">Preise und Verfügbarkeit können sich jederzeit ändern. Maßgeblich ist immer der Preis, der dir unmittelbar vor der Bestellung beim Händler angezeigt wird.</p>
+      <div class="compact-trust">
+        <strong>Transparent ausgewählt.</strong>
+        <span>Wir kennzeichnen Affiliate-Links, nennen Unsicherheiten und erinnern bei kurzfristigen Angeboten daran, den finalen Preis beim Händler zu prüfen.</span>
+        <a href="datenschutz.html">Mehr zur Transparenz →</a>
       </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div><div class="eyebrow">Frisch gefunden</div><h2>Aktuelle Fundstücke</h2></div>
-        <a href="deals.html">Alle Deals →</a>
-      </div>
-      <div class="deal-list" data-deals data-limit="2"></div>
     </div>
   </section>
 </main>
