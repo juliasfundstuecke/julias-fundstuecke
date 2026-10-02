@@ -101,6 +101,10 @@ async function loadDeals(){
     targets.forEach(target => {
       let deals = [...activeDeals];
       if (target.dataset.onlyCodes === 'true') deals = deals.filter(d => d.code);
+      if (target.dataset.ids) {
+        const ids = target.dataset.ids.split(',').map(id => id.trim()).filter(Boolean);
+        deals = ids.map(id => deals.find(d => d.id === id)).filter(Boolean);
+      }
       const limit = Number(target.dataset.limit || 0);
       if (limit > 0) deals = deals.slice(0, limit);
 
