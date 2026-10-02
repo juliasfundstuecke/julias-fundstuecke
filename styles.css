@@ -289,3 +289,22 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
   .nav a:hover,.nav a.active{background:#f7eee6;color:var(--accent-dark)}
   .nav-divider{width:100%;height:1px;margin:5px 0;background:var(--line)}
 }
+
+/* Premium neutral fallback for deals without licensed product imagery */
+.placeholder-premium{
+  width:100%!important;height:100%!important;min-height:230px!important;border-radius:18px!important;
+  background:radial-gradient(circle at 72% 20%,rgba(216,91,43,.12),transparent 32%),linear-gradient(145deg,#fff,#f2ece4)!important;
+  box-shadow:none!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;
+  border:1px solid rgba(229,223,214,.9);position:relative;overflow:hidden;
+}
+.placeholder-premium:after{
+  content:"";position:absolute;width:160px;height:160px;border-radius:50%;border:1px solid rgba(169,122,86,.12);
+  box-shadow:0 0 0 24px rgba(169,122,86,.035),0 0 0 48px rgba(169,122,86,.02);right:-70px;bottom:-80px;
+}
+.placeholder-mark{
+  width:72px;height:72px;border-radius:22px;background:#fff;display:grid;place-items:center;
+  font-size:34px;box-shadow:0 12px 28px rgba(48,38,29,.08);margin-bottom:15px;z-index:1;
+}
+.placeholder-brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;z-index:1}
+.placeholder-label{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-top:4px;font-weight:800;z-index:1}
+@media(max-width:860px){.placeholder-premium{min-height:210px!important}}
