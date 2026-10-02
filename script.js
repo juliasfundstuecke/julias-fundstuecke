@@ -62,6 +62,10 @@ function renderDeal(deal){
         <div class="deal-kicker">${deal.code ? '🎟️ Gutscheincode' : '🔥 Aktuelles Angebot'}</div>
         <h3>${escapeHtml(deal.product)}</h3>
         <p class="deal-desc">${escapeHtml(deal.description || '')}</p>
+        <div class="price-row">
+          ${deal.price ? `<span class="price-now">${escapeHtml(deal.price)}</span>` : ''}
+          ${deal.oldPrice ? `<span class="price-old">${escapeHtml(deal.oldPrice)}</span>` : ''}
+        </div>
         <div class="price-check">Aktuellen Preis direkt bei Amazon prüfen</div>
         ${promo}
         <p class="deal-hint">${escapeHtml(purchaseHint(deal))}</p>
