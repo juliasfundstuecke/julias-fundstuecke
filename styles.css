@@ -308,3 +308,12 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
 .placeholder-brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;z-index:1}
 .placeholder-label{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin-top:4px;font-weight:800;z-index:1}
 @media(max-width:860px){.placeholder-premium{min-height:210px!important}}
+
+
+/* Privacy / analytics consent */
+.consent-banner{position:fixed;inset:auto 16px 16px;z-index:1000;max-width:760px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 70px rgba(33,31,28,.22);padding:20px}
+.consent-banner[hidden]{display:none}
+.consent-inner{display:grid;gap:14px}.consent-copy strong{font-family:Georgia,"Times New Roman",serif;font-size:22px}.consent-copy p{margin:7px 0 0;color:var(--muted);font-size:14px}
+.consent-actions{display:flex;gap:10px;flex-wrap:wrap}.consent-links{display:flex;gap:16px;align-items:center;font-size:12px;color:var(--muted)}
+.consent-link-button,.consent-settings-button{border:0;background:transparent;padding:0;color:var(--accent-dark);font:inherit;font-weight:800;text-decoration:underline;cursor:pointer}
+@media(max-width:520px){.consent-banner{inset:auto 10px 10px;padding:17px;border-radius:16px}.consent-actions .btn{width:100%}}
