@@ -45,7 +45,7 @@ function renderDeal(deal){
 
   const media = deal.image
     ? `<img src="${escapeHtml(deal.image)}" alt="${escapeHtml(deal.product)}" loading="lazy">`
-    : `<div class="placeholder">${escapeHtml(deal.emoji || '🔥')}</div>`;
+    : `<div class="placeholder placeholder-premium" aria-hidden="true"><span class="placeholder-mark">${escapeHtml(deal.emoji || '✦')}</span><span class="placeholder-brand">Julia's</span><span class="placeholder-label">Fundstück</span></div>`;
 
   let promo = '';
   if (deal.code) {
