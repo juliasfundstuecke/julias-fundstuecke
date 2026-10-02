@@ -39,6 +39,7 @@ function purchaseHint(deal){
 }
 
 function renderDeal(deal){
+  const compactMode = document.body.classList.contains('deals-page');
   const badge = deal.discountLabel
     ? `<div class="deal-badge">${escapeHtml(deal.discountLabel)}</div>`
     : '';
@@ -54,6 +55,15 @@ function renderDeal(deal){
     promo = `<div class="coupon">${escapeHtml(deal.promoText)}</div>`;
   }
 
+  const details = compactMode
+    ? `<details class="deal-details">
+         <summary>Details & Hinweise</summary>
+         <p class="deal-desc">${escapeHtml(deal.description || '')}</p>
+         <p class="deal-hint">${escapeHtml(purchaseHint(deal))}</p>
+       </details>`
+    : `<p class="deal-desc">${escapeHtml(deal.description || '')}</p>
+       <p class="deal-hint">${escapeHtml(purchaseHint(deal))}</p>`;
+
   return `
     <article class="deal-card" id="${escapeHtml(deal.id)}">
       ${badge}
@@ -61,23 +71,17 @@ function renderDeal(deal){
       <div class="deal-content">
         <div class="deal-kicker">${deal.code ? '🎟️ Gutscheincode' : '🔥 Aktuelles Angebot'}</div>
         <h3>${escapeHtml(deal.product)}</h3>
-        <p class="deal-desc">${escapeHtml(deal.description || '')}</p>
         <div class="price-row">
           ${deal.price ? `<span class="price-now">${escapeHtml(deal.price)}</span>` : ''}
           ${deal.oldPrice ? `<span class="price-old">${escapeHtml(deal.oldPrice)}</span>` : ''}
         </div>
         <div class="price-check">Aktuellen Preis direkt bei Amazon prüfen</div>
         ${promo}
-        <p class="deal-hint">${escapeHtml(purchaseHint(deal))}</p>
+        ${details}
         <div class="deal-actions">
-          <a class="btn btn-primary" href="${amazonAffiliateUrl(deal.asin)}" target="_blank" rel="nofollow sponsored noopener">Zum Angebot →</a>
+          <a class="btn btn-primary" href="${amazonAffiliateUrl(deal.asin)}" target="_blank" rel="nofollow sponsored noopener">${compactMode ? 'Deal prüfen →' : 'Zum Angebot →'}</a>
         </div>
         <div class="affiliate-note">Werbung | Affiliate-Link${deal.expires ? ' · Gültig bis ' + formatExpiry(deal.expires) : ''}</div>
-        <div class="feedback-box">
-          <strong>💬 Hat der Deal bei dir geklappt?</strong>
-          <span>Teile deine Erfahrung mit anderen Schnäppchenjägern und komm gerne in unsere Facebook-Gruppe.</span>
-          <a href="https://www.facebook.com/share/g/1CDpJMHCjn/?mibextid=wwXIfr" target="_blank" rel="noopener">👉 Feedback &amp; Austausch auf Facebook</a>
-        </div>
       </div>
     </article>`;
 }
