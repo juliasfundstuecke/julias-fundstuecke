@@ -17,7 +17,7 @@
   <title>Aktuelle Deals | Julia's Fundstücke</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="deals-page">
 <header class="site-header"><div class="container header-inner"><a class="brand" href="index.html"><strong>Julia's Fundstücke</strong><span>Deals · Gutscheine · Fundstücke</span></a><button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav">☰</button>
 <nav class="nav" id="site-nav" aria-label="Hauptnavigation"><a href="index.html">Start</a><a href="deals.html">Deals</a><a href="gutscheincodes.html">Gutscheine</a><a href="bestseller.html">Empfehlungen</a></nav></div></header>
 
@@ -34,7 +34,23 @@
     </div>
   </div>
 </section>
-<section class="section"><div class="container"><div class="deal-list" data-deals></div></div></section>
+<section class="section deals-section">
+    <div class="container">
+      <div class="deal-list deals-feed" data-deals></div>
+
+      <div class="deal-community">
+        <div>
+          <div class="eyebrow">📲 Immer auf dem Laufenden</div>
+          <h2>Neue Deals direkt mitbekommen</h2>
+          <p>Für schnelle Hinweise folgst du am besten dem WhatsApp-Kanal. Für Austausch und Deal-Feedback gibt es zusätzlich die Facebook-Gruppe.</p>
+        </div>
+        <div class="deal-community-actions">
+          <a class="btn btn-channel" href="https://whatsapp.com/channel/0029VbDqaVECXC3Hq6vQYK27" target="_blank" rel="noopener">WhatsApp-Kanal →</a>
+          <a class="btn btn-secondary" href="https://www.facebook.com/share/g/1CDpJMHCjn/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook-Gruppe →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 <footer class="footer"><div class="container footer-inner"><div>© <span data-year></span> Julia's Fundstücke · Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</div><div class="footer-links"><a href="https://whatsapp.com/channel/0029VbDqaVECXC3Hq6vQYK27" target="_blank" rel="noopener">WhatsApp-Kanal</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></footer>
 
