@@ -11,12 +11,15 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html"><strong>Julia's Fundstücke</strong><span>Deals · Favoriten · Inspiration</span></a>
-    <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
-    <nav class="nav">
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav">☰</button>
+    <nav class="nav" id="site-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Startseite</a>
       <a href="deals.html">Aktuelle Deals</a>
       <a href="gutscheincodes.html">Gutscheincodes</a>
       <a href="bestseller.html">Bestseller & Empfehlungen</a>
+      <span class="nav-divider" aria-hidden="true"></span>
       <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
     </nav>
   </div>
 </header>
