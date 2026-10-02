@@ -785,3 +785,37 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
   .mega-section{padding-top:20px}
   .mega-strong{padding-top:32px}
 }
+
+
+/* Compact homepage mega teaser */
+.home-mega-teaser{padding:4px 0 6px}
+.home-mega-link{
+  display:grid;
+  grid-template-columns:42px 1fr auto;
+  gap:13px;
+  align-items:center;
+  padding:13px 15px;
+  background:#fff7f1;
+  border:1px solid #ecd8ca;
+  border-radius:15px;
+  text-decoration:none;
+  transition:.2s ease;
+}
+.home-mega-link:hover{transform:translateY(-1px);border-color:#ddbca8}
+.home-mega-icon{
+  width:38px;height:38px;border-radius:12px;
+  display:grid;place-items:center;
+  background:#fff;font-size:20px;
+  box-shadow:0 6px 18px rgba(48,38,29,.05);
+}
+.home-mega-copy{display:flex;flex-direction:column;gap:2px;min-width:0}
+.home-mega-copy strong{font-size:14px;line-height:1.2}
+.home-mega-copy small{font-size:11px;color:var(--muted);line-height:1.35}
+.home-mega-arrow{font-size:21px;color:var(--accent-dark);font-weight:900}
+@media(max-width:520px){
+  .home-mega-teaser{padding-top:0}
+  .home-mega-link{grid-template-columns:38px 1fr auto;padding:11px 12px;gap:10px;border-radius:13px}
+  .home-mega-icon{width:34px;height:34px;font-size:18px}
+  .home-mega-copy strong{font-size:13px}
+  .home-mega-copy small{font-size:10px}
+}
