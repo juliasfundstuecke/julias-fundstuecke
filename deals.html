@@ -7,10 +7,24 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html"><strong>Julia's Fundstücke</strong><span>Deals · Favoriten · Inspiration</span></a><button class="nav-toggle" aria-label="Menü öffnen">☰</button><nav class="nav"><a class="active" href="deals.html">Aktuelle Deals</a><a href="gutscheincodes.html">Gutscheincodes</a><a href="bestseller.html">Bestseller & Empfehlungen</a><a href="impressum.html">Impressum</a></nav></div></header>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html"><strong>Julia's Fundstücke</strong><span>Deals · Favoriten · Inspiration</span></a><button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav">☰</button>
+<nav class="nav" id="site-nav" aria-label="Hauptnavigation">
+<a href="index.html">Startseite</a><a class="active" href="deals.html">Aktuelle Deals</a><a href="gutscheincodes.html">Gutscheincodes</a><a href="bestseller.html">Bestseller & Empfehlungen</a><span class="nav-divider" aria-hidden="true"></span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+</nav></div></header>
 
 <main>
-<section class="page-hero"><div class="container"><div class="eyebrow">🔥 Frisch gefunden</div><h1>Aktuelle Deals</h1><p>Neue Angebote landen hier oben. Preise und Verfügbarkeit können sich kurzfristig ändern – prüfe den finalen Preis bitte immer auf der Angebotsseite.</p></div></section>
+<section class="page-hero">
+  <div class="container">
+    <div class="eyebrow">✦ Frisch gefunden</div>
+    <h1>Aktuelle Deals</h1>
+    <p>Ausgewählte Angebote übersichtlich aufbereitet – mit Preis, Rabattinformation und einem direkten Weg zum Händler.</p>
+    <div class="trust-strip" style="margin-top:22px">
+      <span>✓ Preisangabe mit Prüfhinweis</span>
+      <span>✓ Affiliate-Links gekennzeichnet</span>
+      <span>✓ Finalen Preis beim Händler prüfen</span>
+    </div>
+  </div>
+</section>
 <section class="section"><div class="container"><div class="deal-list" data-deals></div></div></section>
 </main>
 <footer class="footer"><div class="container footer-inner"><div>© <span data-year></span> Julia's Fundstücke · Als Amazon-Partner verdiene ich an qualifizierten Verkäufen.</div><div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div></div></footer>
