@@ -177,6 +177,14 @@ loadDeals();
   const saveChoice = (choice) => {
     try { localStorage.setItem(CONSENT_KEY, choice); } catch(e) {}
     applyConsent(choice);
+    // The initial page_view was queued while analytics consent was denied.
+    // After an explicit opt-in, send a fresh page_view so GA4 receives the visit immediately.
+    if (choice === 'granted' && typeof window.gtag === 'function') {
+      window.gtag('event', 'page_view', {
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    }
     if (banner) banner.hidden = true;
   };
   let saved = null;
