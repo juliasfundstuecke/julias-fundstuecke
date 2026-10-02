@@ -543,3 +543,81 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
   .deal-community-actions{width:100%}
   .deal-community-actions .btn{width:100%}
 }
+
+
+/* Compact voucher code page */
+.codes-page .page-hero{padding:54px 0 22px}
+.codes-page .page-hero h1{font-size:clamp(42px,6vw,60px)}
+.codes-page .page-hero p{max-width:650px}
+.codes-page .trust-strip{margin:18px 0 0}
+.codes-section{padding-top:20px}
+.codes-feed{gap:16px}
+.codes-page .deal-card{
+  grid-template-columns:210px 1fr;
+  gap:24px;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(48,38,29,.055);
+}
+.codes-page .deal-media{min-height:190px;padding:18px;border-radius:16px}
+.codes-page .placeholder-premium{min-height:170px!important}
+.codes-page .placeholder-mark{width:58px;height:58px;font-size:28px;margin-bottom:10px}
+.codes-page .deal-card h3{font-size:24px;margin:5px 0 8px;padding-right:120px}
+.codes-page .deal-badge{top:16px;right:16px;font-size:10px;padding:7px 10px;max-width:180px;text-align:center}
+.codes-page .price-now{font-size:34px}
+.codes-page .price-old{font-size:13px}
+.codes-page .price-check{margin-bottom:8px}
+.codes-page .coupon{
+  margin:10px 0 12px;
+  padding:12px 13px;
+  font-size:13px;
+  background:#fff7f1;
+  border:1px solid #efc5ad;
+  max-width:680px;
+}
+.codes-page .code{
+  font-size:15px;
+  padding:6px 9px;
+  border:1px solid #e3c9b7;
+  background:#fff;
+}
+.codes-page .copy-btn{
+  background:var(--accent);
+  color:#fff;
+  border-radius:9px;
+  padding:7px 10px;
+  text-decoration:none;
+}
+.codes-page .copy-btn:hover{filter:brightness(.95)}
+.codes-page .deal-actions{margin-top:12px}
+.codes-page .deal-actions .btn{min-height:46px;padding-inline:18px}
+.code-community{margin-top:28px}
+@media(max-width:860px){
+  .codes-page .page-hero{padding:42px 0 18px}
+  .codes-page .deal-card{grid-template-columns:150px 1fr;gap:18px;padding:16px}
+  .codes-page .deal-media{min-height:150px;padding:12px}
+  .codes-page .placeholder-premium{min-height:140px!important}
+}
+@media(max-width:620px){
+  .codes-page .page-hero h1{font-size:44px}
+  .codes-page .trust-strip span{width:auto;flex:1 1 100%}
+  .codes-page .deal-card{grid-template-columns:108px 1fr;gap:13px;padding:13px}
+  .codes-page .deal-card:before{width:3px}
+  .codes-page .deal-media{min-height:108px;height:108px;padding:8px;align-self:start}
+  .codes-page .placeholder-premium{min-height:92px!important;height:92px!important;border-radius:13px!important}
+  .codes-page .placeholder-mark{width:42px;height:42px;border-radius:13px;font-size:21px;margin-bottom:5px}
+  .codes-page .placeholder-brand{font-size:14px}
+  .codes-page .placeholder-label{font-size:7px}
+  .codes-page .deal-kicker{font-size:9px}
+  .codes-page .deal-card h3{font-size:18px;line-height:1.18;padding-right:0;margin:3px 0 7px}
+  .codes-page .deal-badge{position:static;grid-column:1/-1;justify-self:start;margin:-2px 0 0 2px;max-width:100%;font-size:9px}
+  .codes-page .price-now{font-size:26px}
+  .codes-page .price-now::before{font-size:.7em;margin-right:5px}
+  .codes-page .price-old{font-size:11px}
+  .codes-page .price-check{font-size:10px;margin-bottom:7px}
+  .codes-page .coupon{grid-column:1/-1;margin:8px 0;padding:10px;gap:8px}
+  .codes-page .code{font-size:14px}
+  .codes-page .copy-btn{padding:7px 9px;font-size:11px}
+  .codes-page .deal-actions .btn{width:100%;min-height:43px;font-size:14px}
+  .codes-page .affiliate-note{font-size:9px}
+}
