@@ -345,3 +345,34 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
 .home-inspiration p{color:var(--muted);margin:0;max-width:650px}
 @media(max-width:860px){.outfit-hero-grid{grid-template-columns:1fr;gap:26px}.outfit-grid{grid-template-columns:1fr}.home-inspiration{align-items:flex-start;flex-direction:column}}
 @media(max-width:520px){.outfit-hero{padding:48px 0 24px}.outfit-hero h1{font-size:42px}.outfit-card{grid-template-columns:1fr;padding:20px}.outfit-icon{width:52px;height:52px}.home-inspiration{padding:22px;border-radius:18px}.home-inspiration h2{font-size:28px}}
+
+
+/* WhatsApp channel CTA */
+.btn-channel{
+  background:#211f1c;
+  color:#fff;
+  border-color:#211f1c;
+  box-shadow:0 8px 18px rgba(33,31,28,.12);
+}
+.btn-channel:hover{transform:translateY(-1px);background:#34302b}
+.channel-cta{
+  background:linear-gradient(135deg,#fff,#f3ede6);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:26px;
+  box-shadow:0 10px 32px rgba(41,35,28,.045);
+}
+.channel-cta h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:34px;
+  line-height:1.1;
+  margin:7px 0 9px;
+  letter-spacing:-.025em;
+}
+.channel-cta p{margin:0;color:var(--muted);max-width:680px}
+@media(max-width:860px){.channel-cta{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.channel-cta{padding:22px;border-radius:18px}.channel-cta h2{font-size:29px}.channel-cta .btn{width:100%}}
