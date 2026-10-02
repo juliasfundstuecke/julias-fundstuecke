@@ -164,6 +164,11 @@ loadDeals();
 (() => {
   const CONSENT_KEY = 'jf_analytics_consent';
   const banner = document.querySelector('[data-consent-banner]');
+
+  if (window.JF_ANALYTICS_EXCLUDED) {
+    if (banner) banner.hidden = true;
+    return;
+  }
   const applyConsent = (choice) => {
     if (typeof window.gtag === 'function') {
       window.gtag('consent', 'update', {
