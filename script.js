@@ -158,3 +158,36 @@ document.querySelectorAll('.nav a').forEach(link=>{
 
 document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 loadDeals();
+
+
+// Privacy-friendly Google Analytics consent controls.
+(() => {
+  const CONSENT_KEY = 'jf_analytics_consent';
+  const banner = document.querySelector('[data-consent-banner]');
+  const applyConsent = (choice) => {
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        analytics_storage: choice === 'granted' ? 'granted' : 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied'
+      });
+    }
+  };
+  const saveChoice = (choice) => {
+    try { localStorage.setItem(CONSENT_KEY, choice); } catch(e) {}
+    applyConsent(choice);
+    if (banner) banner.hidden = true;
+  };
+  let saved = null;
+  try { saved = localStorage.getItem(CONSENT_KEY); } catch(e) {}
+  if (saved === 'granted' || saved === 'denied') {
+    applyConsent(saved);
+  } else if (banner) {
+    banner.hidden = false;
+  }
+  document.querySelectorAll('[data-consent-accept]').forEach(el => el.addEventListener('click', () => saveChoice('granted')));
+  document.querySelectorAll('[data-consent-reject]').forEach(el => el.addEventListener('click', () => saveChoice('denied')));
+  document.querySelectorAll('[data-consent-close]').forEach(el => el.addEventListener('click', () => { if (banner) banner.hidden = true; }));
+  document.querySelectorAll('[data-consent-settings]').forEach(el => el.addEventListener('click', () => { if (banner) banner.hidden = false; }));
+})();
