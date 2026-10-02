@@ -39,7 +39,8 @@ function purchaseHint(deal){
 }
 
 function renderDeal(deal){
-  const compactMode = document.body.classList.contains('deals-page');
+  const codeMode = document.body.classList.contains('codes-page');
+  const compactMode = document.body.classList.contains('deals-page') || codeMode;
   const badge = deal.discountLabel
     ? `<div class="deal-badge">${escapeHtml(deal.discountLabel)}</div>`
     : '';
@@ -79,7 +80,7 @@ function renderDeal(deal){
         ${promo}
         ${details}
         <div class="deal-actions">
-          <a class="btn btn-primary" href="${amazonAffiliateUrl(deal.asin)}" target="_blank" rel="nofollow sponsored noopener">${compactMode ? 'Deal prüfen →' : 'Zum Angebot →'}</a>
+          <a class="btn btn-primary" href="${amazonAffiliateUrl(deal.asin)}" target="_blank" rel="nofollow sponsored noopener">${codeMode ? 'Code & Angebot prüfen →' : (compactMode ? 'Deal prüfen →' : 'Zum Angebot →')}</a>
         </div>
         <div class="affiliate-note">Werbung | Affiliate-Link${deal.expires ? ' · Gültig bis ' + formatExpiry(deal.expires) : ''}</div>
       </div>
