@@ -1,0 +1,47 @@
+name: Telegram Deals
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: telegram-deals
+  cancel-in-progress: false
+
+jobs:
+  post-one-deal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Einen Deal bei Telegram posten
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: "@Rabattsammler"
+          FORCE_POST: ${{ github.event_name == 'workflow_dispatch' && '1' || '0' }}
+        run: python telegram_bot.py
+
+      - name: Posting-Status speichern
+        shell: bash
+        run: |
+          if git diff --quiet -- telegram-state.json; then
+            echo "Kein neuer Posting-Status."
+            exit 0
+          fi
+          git config user.name "Julia's Fundstücke Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add telegram-state.json
+          git commit -m "Telegram: geposteten Deal merken"
+          git push
