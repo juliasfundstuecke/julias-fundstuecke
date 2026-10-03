@@ -10,6 +10,52 @@ const escapeHtml = (value='') => String(value)
 const amazonAffiliateUrl = (asin) =>
   `https://www.amazon.de/dp/${encodeURIComponent(asin)}/ref=nosim?tag=${encodeURIComponent(AMAZON_TRACKING_TAG)}`;
 
+const SHARE_ICON = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a3 3 0 1 0-2.83-4A3 3 0 0 0 15 5c0 .18.02.35.05.52L8.91 8.59A3 3 0 0 0 7 8a3 3 0 1 0 1.91 5.41l6.14 3.07A3 3 0 0 0 15 17c0 .18.02.35.05.52A3 3 0 1 0 16 15c-.44 0-.86.1-1.23.27L8.63 12.2A3.1 3.1 0 0 0 9 11c0-.42-.08-.82-.23-1.19l6.13-3.07c.52.78 1.41 1.26 2.4 1.26H18Z"/></svg>`;
+
+function showShareFeedback(button, text='Link kopiert ✓'){
+  if (!button) return;
+  const oldHtml = button.innerHTML;
+  const oldLabel = button.getAttribute('aria-label');
+  button.textContent = text;
+  button.setAttribute('aria-label', text);
+  button.classList.add('share-success');
+  setTimeout(() => {
+    button.innerHTML = oldHtml;
+    if (oldLabel) button.setAttribute('aria-label', oldLabel);
+    button.classList.remove('share-success');
+  }, 1600);
+}
+
+async function copyShareLink(url, button){
+  try{
+    await navigator.clipboard.writeText(url);
+    showShareFeedback(button);
+  }catch(error){
+    const helper = document.createElement('textarea');
+    helper.value = url;
+    helper.setAttribute('readonly','');
+    helper.style.position = 'fixed';
+    helper.style.opacity = '0';
+    document.body.appendChild(helper);
+    helper.select();
+    document.execCommand('copy');
+    helper.remove();
+    showShareFeedback(button);
+  }
+}
+
+async function shareUrl({title=document.title, text='', url=window.location.href, button=null} = {}){
+  if (navigator.share) {
+    try{
+      await navigator.share({title, text, url});
+      return;
+    }catch(error){
+      if (error && error.name === 'AbortError') return;
+    }
+  }
+  await copyShareLink(url, button);
+}
+
 const formatExpiry = (dateString) => {
   if (!dateString) return '';
   const [y,m,d] = dateString.split('-');
@@ -57,6 +103,9 @@ function renderDeal(deal){
     promo = `<div class="coupon">${escapeHtml(deal.promoText)}</div>`;
   }
 
+  const dealSharePage = codeMode ? 'gutscheincodes.html' : 'deals.html';
+  const dealShareUrl = new URL(`${dealSharePage}#${deal.id}`, window.location.href).href;
+
   const details = compactMode
     ? `<details class="deal-details">
          <summary>Details & Hinweise</summary>
@@ -82,6 +131,7 @@ function renderDeal(deal){
         ${details}
         <div class="deal-actions">
           <a class="btn btn-primary" href="${amazonAffiliateUrl(deal.asin)}" target="_blank" rel="nofollow sponsored noopener">${codeMode ? 'Code & Angebot prüfen →' : ((compactMode || homeMode) ? 'Deal prüfen →' : 'Zum Angebot →')}</a>
+          <button class="btn btn-share-deal" type="button" data-share-deal data-share-url="${escapeHtml(dealShareUrl)}" data-share-title="${escapeHtml(deal.product)}" aria-label="${escapeHtml(deal.product)} teilen">${SHARE_ICON}<span>Teilen</span></button>
         </div>
         <div class="affiliate-note">Werbung | Affiliate-Link${deal.expires ? ' · Gültig bis ' + formatExpiry(deal.expires) : ''}</div>
       </div>
@@ -141,6 +191,42 @@ document.addEventListener('click', async (event)=>{
     setTimeout(()=>button.textContent=old,1400);
   }catch(e){
     alert('Code: ' + code);
+  }
+});
+
+const headerInner = document.querySelector('.header-inner');
+if (headerInner && !headerInner.querySelector('[data-site-share]')) {
+  const siteShareButton = document.createElement('button');
+  siteShareButton.type = 'button';
+  siteShareButton.className = 'site-share-button';
+  siteShareButton.setAttribute('data-site-share','');
+  siteShareButton.setAttribute('aria-label','Diese Seite teilen');
+  siteShareButton.setAttribute('title','Diese Seite teilen');
+  siteShareButton.innerHTML = SHARE_ICON;
+  const navToggle = headerInner.querySelector('.nav-toggle');
+  headerInner.insertBefore(siteShareButton, navToggle || headerInner.querySelector('.nav'));
+}
+
+document.addEventListener('click', async (event) => {
+  const dealShare = event.target.closest('[data-share-deal]');
+  if (dealShare) {
+    await shareUrl({
+      title: dealShare.dataset.shareTitle || document.title,
+      text: dealShare.dataset.shareTitle ? `${dealShare.dataset.shareTitle} – gefunden bei Julia's Fundstücke` : '',
+      url: dealShare.dataset.shareUrl || window.location.href,
+      button: dealShare
+    });
+    return;
+  }
+
+  const siteShare = event.target.closest('[data-site-share]');
+  if (siteShare) {
+    await shareUrl({
+      title: document.title,
+      text: "Julia's Fundstücke – Deals, Gutscheine & Empfehlungen",
+      url: window.location.href,
+      button: siteShare
+    });
   }
 });
 
