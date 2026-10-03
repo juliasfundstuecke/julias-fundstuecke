@@ -819,3 +819,68 @@ body{background:radial-gradient(circle at 85% 5%,rgba(216,91,43,.055),transparen
   .home-mega-copy strong{font-size:13px}
   .home-mega-copy small{font-size:10px}
 }
+
+
+/* Sitewide share controls */
+.site-share-button{
+  flex:0 0 auto;
+  width:42px;
+  height:42px;
+  margin-left:auto;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+  color:var(--text);
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(41,35,28,.05);
+  transition:.2s ease;
+}
+.site-share-button:hover{
+  transform:translateY(-1px);
+  border-color:#d8c7b9;
+  color:var(--accent-dark);
+}
+.site-share-button svg,
+.btn-share-deal svg{
+  width:19px;
+  height:19px;
+  fill:currentColor;
+  display:block;
+}
+.site-share-button.share-success{
+  width:auto;
+  min-width:42px;
+  padding:0 12px;
+  color:var(--accent-dark);
+  font-size:12px;
+  font-weight:850;
+}
+.btn-share-deal{
+  background:#fff;
+  border-color:var(--line);
+  color:#4e4a45;
+  cursor:pointer;
+}
+.btn-share-deal:hover{
+  background:var(--surface-soft);
+  border-color:#d8c7b9;
+}
+.btn-share-deal.share-success{
+  color:var(--accent-dark);
+}
+@media(max-width:860px){
+  .site-share-button{margin-left:auto}
+}
+@media(max-width:620px){
+  .site-share-button{
+    width:40px;
+    height:40px;
+    border-radius:11px;
+  }
+  .site-share-button svg{width:18px;height:18px}
+  .deal-actions .btn-share-deal{
+    width:100%;
+  }
+}
